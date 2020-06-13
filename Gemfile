@@ -61,5 +61,6 @@ end
 
 gem "actionpack", ">= 5.2.4.3"
 gem "activesupport", ">= 5.2.4.3"
+gem "devise"
 gem "font-awesome-sass"
 gem "haml-rails"

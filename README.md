@@ -4,19 +4,16 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|null: false|
-|email|string|null: false ,unique: true ,index: true|
+|nickname|string|null: false, unique: true, index: true|
+|email|string|null: false, unique: true, index: true|
 |password|string|null: false|
-|lastname|string|null: false|
-|firstname|string|null: false|
-|lastname_kana|string|null: false|
-|firstname_kana|string|null: false|
-|birthdate|date|null: false|
+|birth_on|date||
 |profile|text||
 |image|string||
 
 ### Association
 
+- has_one :user_name, dependent: :destroy
 - has_many :administrators, dependent: :destroy
 - has_many :contents, through: :administrators
 
@@ -35,7 +32,20 @@
 - has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'followed_id'
 - has_many :followers, through: :reverse_of_relationships, source: :follower
 
-## groupsテーブル
+## User_namesテーブル
+
+|Column|Type|Options|
+|------|----|-------|
+|lastname|string|null: false|
+|firstname|string|null: false|
+|lastname_kana|string|null: false|
+|firstname_kana|string|null: false|
+
+### Association
+
+- belongs_to :user
+
+## Groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|

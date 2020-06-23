@@ -54,7 +54,7 @@ linter:
   # https://help.sider.review/tools/css/stylelint
   stylelint:
     npm_install: false
-    config: my_stylelintrc.yaml
+    config: "config/stylelintrc.yaml"
     syntax: sugarss
     ignore-path: .gitignore
     ignore-disables: true

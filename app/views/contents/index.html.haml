@@ -18,6 +18,9 @@
       - else
         .tmp-signup
           = link_to "ユーザー登録", new_user_registration_path
+        .tmp-signin
+          = link_to "ログイン", new_user_session_path
+
       = link_to root_path do
         .create-new
           = icon('fas', 'edit', class: 'create-new__icon')

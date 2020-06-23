@@ -19,7 +19,7 @@
                   = icon('fas', 'lock')
               = f.password_field :password, id: "user_password", class: "form__color__area__input__field", pattern: "^(?=.*?[a-zA-Z])(?=.*?\\d)[a-zA-Z\\d]{8,100}$", required: true
           .submit
-            = f.submit "新規登録", class: 'submit__btn'
+            = f.submit "ログイン", class: 'submit__btn'
       .description
         %p
           興味と知識を共有できるWebサービス

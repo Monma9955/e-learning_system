@@ -32,6 +32,13 @@
               color: #777;
             }
             &__input {
+              // 入力した内容がバリデーションに引っかかった場合のクラス
+              .field_with_errors {
+                display: contents;
+                .form__color__area__input__field {
+                  box-shadow: 0 0 2px 2px rgb(255, 14, 163);
+                }
+              }
               &__icon {
                 display: inline-block;
                 p {

@@ -1,0 +1,131 @@
+#container {
+  .user {
+    margin: 10px auto 0;
+    padding: 10px 140px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .logo {
+      position: relative;
+      top: 3px;
+      img {
+        width: 120px;
+        height: 45px;
+        border-radius: 2px;
+        object-fit: cover;
+        object-position: 0% 50%;
+      }
+    }
+    .link {
+      color: $white-color;
+      text-decoration: none;
+      &__btn {
+        border-radius: 20px;
+        padding: 8px 10px;
+        width: 325px;
+        background-color: #e2c573;
+        text-align: center;
+      }
+    }
+  }
+  #inner {
+    padding: 20px 80px;
+    background-color: #b5ff70;
+    .main {
+      min-width: 800px;
+      height: 100%;
+      .form {
+        float: left;
+        width: 400px;
+        margin-left: 15px;
+        .title {
+          border: solid 3px #fbff1f;
+          border-radius: 3px;
+          padding: 5px 0 5px 17px;
+          background-color: $theme-color;
+          color: $white-color;
+        }
+        &__color {
+          background-color: #fbff1f;
+          padding: 0 15px;
+          &__area {
+            padding: 5px 0;
+            &__name {
+              font-weight: bold;
+            }
+            &__attention {
+              height: 20px;
+              padding-left: 9px;
+              font-size: 13px;
+              color: #777;
+            }
+            &__input {
+              // 入力した内容がバリデーションに引っかかった場合のクラス
+              .field_with_errors {
+                display: contents;
+                .form__color__area__input__field {
+                  box-shadow: 0 0 2px 2px rgb(255, 14, 163);
+                }
+              }
+              &__icon {
+                display: inline-block;
+                p {
+                  border: $form-border;
+                  border-radius: 10px 0 0 10px;
+                  width: 40px;
+                  height: 40px;
+                  background-color: #bbbbbbd2;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                }
+              }
+              &__field {
+                @include form-input($bRadius:0 10px 10px 0, $mWidth: calc(100% - 84px));
+                padding: 0 30px 0 10px;
+                font-size: 16px;
+              }
+            }
+          }
+          .submit {
+            text-align: center;
+            &__btn {
+              margin: 25px 0 20px 0;
+              @include form-input($bRadius: 10px, $mWidth: 55%);
+              background-color: $white-color;
+              color: #777;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .description {
+        float: left;
+        width: 350px;
+        height: 373px;
+        padding: 20px 15px;
+        background: {
+          image: url(jpg/books.jpg);
+          repeat: no-repeat;
+          position: center;
+        }
+        p {
+          background-color: #222222d2;
+          opacity: 0.95;
+          text-align: center;
+          color: $white-color;
+          font: {
+            size: 18px;
+            weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+
+.main::after {
+  content: "";
+  display: block;
+  clear: both;
+}

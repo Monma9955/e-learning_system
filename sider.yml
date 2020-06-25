@@ -1,12 +1,12 @@
-# linter:
-# # https://help.sider.review/getting-started/custom-configuration
+linter:
+# https://help.sider.review/getting-started/custom-configuration
 
-#   # https://help.sider.review/tools/ruby/rubocop
-#   rubocop:
-#     gems:
-#       - "rubocop-rspec"
-#     config: "config/.rubocop.yml"
-#     safe: true
+  # https://help.sider.review/tools/ruby/rubocop
+  rubocop:
+    # gems:
+    #   - "rubocop-rspec"
+    # config: "config/.rubocop.yml"
+    safe: true
 
 #   # https://help.sider.review/tools/ruby/brakeman
 #   brakeman:
@@ -51,16 +51,16 @@
 #     gems:
 #       - "slim"
 
-#   # https://help.sider.review/tools/css/stylelint
-#   stylelint:
-#     npm_install: false
-#     config: my_stylelintrc.yaml
-#     syntax: sugarss
-#     ignore-path: .gitignore
-#     ignore-disables: true
-#     report-needless-disables: true
-#     quiet: true
-#     glob: "**/*.{css,scss}"
+  # https://help.sider.review/tools/css/stylelint
+  stylelint:
+    npm_install: false
+    # config: "config/stylelintrc.yaml"
+    syntax: sugarss
+    ignore-path: .gitignore
+    ignore-disables: true
+    report-needless-disables: true
+    quiet: true
+    glob: "**/*.{css,scss}"
 
 #   # https://help.sider.review/tools/others/misspell
 #   misspell:

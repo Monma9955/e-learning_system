@@ -1,0 +1,7 @@
+@mixin form-input($mWidth: 250px, $bRadius: 3px) {
+  min-height: 40px;
+  min-width: $mWidth;
+  border: $form-border {
+    radius: $bRadius;
+  }
+}

@@ -1,5 +1,5 @@
 #container
-  %header#header
+  %header#header.top
     .inner
       .inner__left
         .user-photo
@@ -12,6 +12,15 @@
           = f.text_field :search_word, class: 'search__window', placeholder: 'キーワード検索'
           = f.button type: 'submit', class: 'search__btn' do
             = icon('fas', 'search')
+      - if user_signed_in?
+        .tmp-signout
+          = link_to "サインアウト", destroy_user_session_path, method: :delete
+      - else
+        .tmp-signup
+          = link_to "ユーザー登録", new_user_registration_path
+        .tmp-signin
+          = link_to "ログイン", new_user_session_path
+
       = link_to root_path do
         .create-new
           = icon('fas', 'edit', class: 'create-new__icon')

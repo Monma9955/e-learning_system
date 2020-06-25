@@ -1,12 +1,7 @@
-$header-height: 65px;
-$inner-width: 950px;
-$font-color: #57585C;
-$theme-color: #eba819ec;
-
 #container {
   width: 100%;
   color: $font-color;
-  header {
+  .top {
     border-bottom: ridge 3px;
     width: 100%;
     height: $header-height;

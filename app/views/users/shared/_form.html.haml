@@ -1,4 +1,18 @@
 #container
+  %header#header.user
+    .logo
+      = link_to root_path do
+        = image_tag "/assets/png/eLS_logo.png", alt: "title_logo"
+    - if "#{controller_name}" == "registrations"
+      = link_to new_user_session_path, class: "link" do
+        .link__btn
+          = icon('fas', 'share-square')
+          既にアカウントをお持ちの方はこちら
+    - elsif "#{controller_name}" == "sessions"
+      = link_to new_user_registration_path, class: "link" do
+        .link__btn
+          = icon('fas', 'share-square')
+          アカウントをお持ちではない方はこちら
   #inner
     .main
       - if "#{controller_name}" == "registrations"
@@ -58,13 +72,3 @@
           e-learning_system
           %br
           さあ、リテラシーをシェアしよう！
-  - if "#{controller_name}" == "registrations"
-    = link_to new_user_session_path, class: "sign_in" do
-      .sign_in__btn
-        = icon('fas', 'share-square')
-        既にアカウントをお持ちの方はこちら
-  - elsif "#{controller_name}" == "sessions"
-    = link_to new_user_registration_path, class: "sign_in" do
-      .sign_in__btn
-        = icon('fas', 'share-square')
-        アカウントをお持ちではない方はこちら

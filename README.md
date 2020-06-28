@@ -15,12 +15,12 @@
 
 - has_one :user_name, dependent: :destroy
 - has_many :administrators, dependent: :destroy
-- has_many :contents, through: :administrators
+- has_many :articles, through: :administrators
 
 - has_many :transactions, dependent: :destroy
-- has_many :contents, through: :transactions
+- has_many :articles, through: :transactions
 - has_one :recommend_transaction, -> {where(recommend: true)}, class_name: 'Transaction'
-- has_one :recommend_content, through: :recommend_transaction, source: :content
+- has_one :recommend_article, through: :recommend_transaction, source: :article
 
 - has_many :groups, dependent: :destroy
 
@@ -57,8 +57,8 @@
 - belongs_to :user
 - has_many :users_groups, dependent: :destroy
 - has_many :groups, through: :users_groups
-- has_many :groups_contents, dependent: :destroy
-- has_many :contents, through: groups_contents
+- has_many :groups_articles, dependent: :destroy
+- has_many :articles, through: groups_articles
 
 ## Categoriesテーブル
 
@@ -114,7 +114,7 @@
 
 - belongs_to :content
 
-## imagesテーブル
+## Imagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -150,38 +150,38 @@
 - belongs_to :user
 - belogns_to :group
 
-## groups_contentsテーブル
+## groups_articlesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |group_id|references|null: false, foreign_key: true|
-|content_id|references|null: false, foreign_key: true|
+|article_id|references|null: false, foreign_key: true|
 
 ### Association
 
 - belongs_to :user
-- belogns_to :group
+- belongs_to :group
 
 ## administratorsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
-|content|references|null: false, foreign_key: true|
+|article|references|null: false, foreign_key: true|
 
 ### Association
 
 - belongs_to :user
-- belongs_to :content
+- belongs_to :article
 
 ## transactionsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
-|content|references|null: false, foreign_key: true|
+|article|references|null: false, foreign_key: true|
 
 ### Association
 
 - belongs_to :user
-- belongs_to :content
+- belongs_to :article

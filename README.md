@@ -81,6 +81,9 @@
 |category|references|null: false, foreign_key: true|
 |title|string|null: false, index: true|
 |price|integer||
+|format|integer|status, default: 0, null: false, limit:1|
+|time_limit|integer||
+|public|boolean|default: false, null: false|
 
 ### Association
 

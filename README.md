@@ -83,9 +83,13 @@
 ### Association
 
 - belongs_to :category
-- has_many :contents, dependent: :destroy
+- has_many :pages, dependent: :destroy
+- has_many :administrators, dependent: :destroy
+- has_many :users, through: :administrators
+- has_many :transactions, dependent: :destroy
+- has_many :users, through: :transactions
 
-## Contentsテーブル
+## Pagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -97,18 +101,17 @@
 ### Association
 
 - belongs_to :article
-- has_many :texts, dependent: :delete_all
+- has_many :options, dependent: :delete_all
 - has_many :images, dependent: :delete_all
-- has_many :administrators, dependent: :destroy
-- has_many :users, through: :administrators
-- has_many :transactions, dependent: :destroy
-- has_many :users, through: :transactions
+- has_many :results, dependent: :destroy
 
-## textsテーブル
+## Optionsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|text|text||
+|page|references|null: false, foreign_key: true|
+|name|string|null: false|
+|correct|boolean|default: true, null: false|
 
 ### Association
 
@@ -118,7 +121,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|image|string||
+|page|references|null: false, foreign_key: true|
+|image|string|null: false|
 
 ### Association
 

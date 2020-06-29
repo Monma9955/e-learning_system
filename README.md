@@ -99,7 +99,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |article|references|null: false, foreign_key: true|
-|title|string|null: false, index: true|
+|text|text|null: false|
 |price|integer|index: true|
 
 ### Association

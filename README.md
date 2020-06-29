@@ -101,7 +101,6 @@
 |article|references|null: false, foreign_key: true|
 |title|string|null: false, index: true|
 |price|integer|index: true|
-|draft|boolean|default: false, null: false|
 
 ### Association
 

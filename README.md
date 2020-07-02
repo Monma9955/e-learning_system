@@ -14,6 +14,8 @@
 ### Association
 
 - has_one :user_name, dependent: :destroy
+- has_many :articles, dependent: :nullify
+
 - has_many :administrators, dependent: :destroy
 - has_many :articles, through: :administrators
 
@@ -78,15 +80,17 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|category|references|null: false, foreign_key: true|
-|title|string|null: false, index: true|
+|user_id|bigint|foreign_key: true|
+|category_id|bigint|null: false, foreign_key: true|
+|title|string|null: false|
 |price|integer||
-|format|integer|status, default: 0, null: false, limit:1|
+|format|integer|default: 0, null: false, limit:1|
 |time_limit|integer||
 |public|boolean|default: false, null: false|
 
 ### Association
 
+- belongs_to :user
 - belongs_to :category
 - has_many :pages, dependent: :destroy
 - has_many :administrators, dependent: :destroy

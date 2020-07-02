@@ -81,7 +81,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|bigint|foreign_key: true|
-|category_id|bigint|null: false, foreign_key: true|
+|category_id|bigint|foreign_key: true|
 |title|string|null: false|
 |price|integer||
 |format|integer|default: 0, null: false, limit:1|
@@ -104,7 +104,6 @@
 |------|----|-------|
 |article|references|null: false, foreign_key: true|
 |text|text|null: false|
-|price|integer|index: true|
 
 ### Association
 

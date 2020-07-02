@@ -102,7 +102,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|article|references|null: false, foreign_key: true|
+|article_id|bigint|null: false, foreign_key: true|
 |text|text|null: false|
 
 ### Association
@@ -116,7 +116,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|page|references|null: false, foreign_key: true|
+|page_id|bigint|null: false, foreign_key: true|
 |name|string|null: false|
 |correct|boolean|default: true, null: false|
 

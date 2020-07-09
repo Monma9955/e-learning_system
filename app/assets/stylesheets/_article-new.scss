@@ -1,0 +1,103 @@
+$article-padding: 20px 40px;
+
+.new-article {
+  // レスポンシブ未対応
+  width: 970px;
+  margin: 20px auto;
+  background-color: #dfdfdf;
+  font-size: 18px;
+  header {
+    background-color: $background-theme-color;
+    padding: $article-padding;
+    img {
+      @include main-logo;
+    }
+  }
+  .menu1 {
+    padding: $article-padding;
+    display: flex;
+    justify-content: space-between;
+    &__container {
+      width: 300px;
+      &__select {
+        width: 98%;
+        height: 30px;
+      }
+    }
+  }
+  .article-title {
+    padding: 20px 80px 20px 0;
+    @include flex-end-form;
+    border-bottom: solid 2px #000080;
+    input {
+      margin-left: 20px;
+      padding: 5px 15px;
+      @include form_input($mWidth:680px);
+    }
+  }
+  .pages {
+    padding: 20px 80px 20px 0;
+    border-bottom: solid 2px #000080;
+    &__page {
+      &__container {
+        margin-bottom: 10px;
+        @include flex-end-form;
+        &__text {
+          &__area {
+              margin-left: 20px;
+              padding: 10px 15px;
+              @include form_input($mHeight:100px, $mWidth:680px);
+          }
+        }
+        &__add-form {
+          margin-left: 20px;
+          width: 25px;
+          height: 25px;
+          cursor: pointer;
+          border: solid 1px {
+            radius: 3px;
+            color: #315ef3;
+          }
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          i {
+            color: #315ef3;
+            font-size: 20px;
+          }
+        }
+        .form {
+          margin-left: 20px;
+          padding: 5px 15px;
+          @include form_input($mWidth:680px);
+        }
+      }
+    }
+  }
+  .menu2 {
+    padding: $article-padding;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    .form {
+      padding-right: 5px;
+      text-align: right;
+      @include form_input($mWidth:200px);
+    }
+    .public {
+      padding-left: 12px;
+      @include form_input($mWidth:100px);
+      cursor: pointer;
+    }
+    &__submit {
+      &__btn {
+        width: 120px;
+        height: 50px;
+        border-radius: 6px;
+        background-color: #46abda;
+        color: $white-color;
+        cursor: pointer;
+      }
+    }
+  }
+}

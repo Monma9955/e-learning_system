@@ -32,11 +32,7 @@
           position: relative;
           top: 3px;
           img {
-            width: 120px;
-            height: 45px;
-            border-radius: 2px;
-            object-fit: cover;
-            object-position: 0% 50%;
+            @include main-logo();
           }
         }
       }
@@ -55,7 +51,7 @@
           width: 110px;
           height: 35px;
           border-radius: 20px;
-          background-color: $theme-color;
+          background-color: $menu-theme-color;
           padding: 3px;
           display: flex;
           justify-content: center;
@@ -106,7 +102,7 @@
           i {
             text-align: center;
             width: 25px;
-            color: $theme-color;
+            color: $menu-theme-color;
           }
         }
       }

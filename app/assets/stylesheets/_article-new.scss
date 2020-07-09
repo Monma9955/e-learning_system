@@ -1,4 +1,4 @@
-$tmp-pd: 20px 40px;
+$article-padding: 20px 40px;
 
 .new-article {
   // レスポンシブ未対応
@@ -8,13 +8,13 @@ $tmp-pd: 20px 40px;
   font-size: 18px;
   header {
     background-color: $background-theme-color;
-    padding: $tmp-pd;
+    padding: $article-padding;
     img {
       @include main-logo;
     }
   }
   .menu1 {
-    padding: $tmp-pd;
+    padding: $article-padding;
     display: flex;
     justify-content: space-between;
     &__container {
@@ -75,7 +75,7 @@ $tmp-pd: 20px 40px;
     }
   }
   .menu2 {
-    padding: $tmp-pd;
+    padding: $article-padding;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;

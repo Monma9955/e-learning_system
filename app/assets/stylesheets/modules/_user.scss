@@ -9,11 +9,7 @@
       position: relative;
       top: 3px;
       img {
-        width: 120px;
-        height: 45px;
-        border-radius: 2px;
-        object-fit: cover;
-        object-position: 0% 50%;
+        @include main-logo();
       }
     }
     .link {
@@ -30,7 +26,7 @@
   }
   #inner {
     padding: 20px 80px;
-    background-color: #b5ff70;
+    background-color: $background-theme-color;
     .main {
       min-width: 800px;
       height: 100%;
@@ -42,7 +38,7 @@
           border: solid 3px #fbff1f;
           border-radius: 3px;
           padding: 5px 0 5px 17px;
-          background-color: $theme-color;
+          background-color: $menu-theme-color;
           color: $white-color;
         }
         &__color {

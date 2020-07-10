@@ -74,7 +74,7 @@
 ### Association
 
 - has_ancestry
-- has_many :articles
+- has_many :articles, dependent: :nullify
 
 ## Articlesテーブル
 

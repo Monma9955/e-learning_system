@@ -1,0 +1,6 @@
+ja:
+  enums:
+    article:
+      format:
+        only_one: "択一問題"
+        multiple: "複数選択問題"

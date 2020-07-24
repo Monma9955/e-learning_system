@@ -2,70 +2,51 @@
   %header
     = link_to root_path do
       = image_tag "/assets/png/eLS_logo.png", alt: "title_logo"
-  .menu1
-    .menu1__container
-      %p.menu1__container__name
-        カテゴリー１
-      %select{ name: "category1", class: "menu1__container__select" }
-        %option{ value: "a" }
-          エンターテイメント
-        %option{ value: "b" }
-          IT
-    .menu1__container
-      %p.menu1__container__name
-        カテゴリー２
-      %select{ name: "category2", class: "menu1__container__select" }
-        %option{ value: "a" }
-          クイズ
-        %option{ value: "b" }
-          プログラミング
-    .menu1__container
-      %p.menu1__container__name
-        出題形式
-      %select{ name: "format", class: "menu1__container__select" }
-        %option{ value: "a" }
-          択一問題
-        %option{ value: "b" }
-          複数選択問題
-  .article-title
-    .article-title__name タイトル
-    %input{ name: "title", placeholder: "タイトルを入力してください"}
-  #pages.pages
-    .pages__page
-      .pages__page__container
-        .pages__page__container__name 問題文
-        .pages__page__container__text
-          %textarea{ name: "text", class: "pages__page__container__text__area", placeholder: "問題文を入力してください。"}
-      #correct.pages__page__container
-        .pages__page__container__name-block 正答
-        .pages__page__container__add-form
-          = icon('fas', 'plus')
-        .pages__page__container__answer
-          %input{ name: "name", class: "form" }
-      #wrong.pages__page__container
-        .pages__page__container__name-block 誤答
-        .pages__page__container__add-form
-          = icon('fas', 'plus')
-        .pages__page__container__answer
-          %input{ name: "name", class: "form" }
-  .menu2
-    .menu2__container
-      .menu2__container__name 料金
-      .menu2__container__input
-        %input{ name: "price", class: "form", placeholder: "0" }
-        円
-    .menu2__container
-      .menu2__container__name 制限時間
-      .menu2__container__input
-        %input{ name: "price", class: "form", placeholder: "0"}
-        分
-    .menu2__container
-      .menu2__container__name 公開設定
-      .menu2__container__select
-        %select{ name: "public", class: "public" }
-          %option{ value: "a" }
-            公開
-          %option{ value: "b" }
-            非公開
-    .menu2__submit
-    %input{ type: "submit", value: "問題作成", class: "menu2__submit__btn" }
+  = simple_form_for @article, url: {controller: 'articles', action: 'create'}, local: true do |f|
+    .menu1
+      .menu1__container
+        %p.menu1__container__name
+          カテゴリー１
+        = f.collection_select :article_category, @root_categories, :id, :name, {}, class: "menu1__container__select" 
+      .menu1__container
+        %p.menu1__container__name
+          出題形式
+        = f.select :article_format, Article.formats_i18n.invert, {}, class: "menu1__container__select"
+    .article-title
+      .article-title__name タイトル
+      = f.input :article_title, label: false, placeholder: "タイトルを入力してください"
+    #pages.pages
+      .pages__page
+        .pages__page__container
+          .pages__page__container__name 問題文
+          .pages__page__container__text
+            = f.text_area :page_text, class: "pages__page__container__text__area", placeholder: "問題文を入力してください。"
+        #correct.pages__page__container
+          .pages__page__container__name-block 正答
+          .pages__page__container__add-form
+            = icon('fas', 'plus')
+          .pages__page__container__answer
+            = f.input_field :option_correct, class: 'form', label: false
+        #wrong.pages__page__container
+          .pages__page__container__name-block 誤答
+          .pages__page__container__add-form
+            = icon('fas', 'plus')
+          .pages__page__container__answer
+            = f.input_field :option_wrong, label: false, class: "form" 
+    .menu2
+      .menu2__container
+        .menu2__container__name 料金
+        .menu2__container__input
+          = f.input_field :article_price, label: false, class: "form", placeholder: "0"
+          円
+      .menu2__container
+        .menu2__container__name 制限時間
+        .menu2__container__input
+          = f.input_field :article_time_limit, class: "form", placeholder: "0"
+          分
+      .menu2__container
+        .menu2__container__name 公開する
+        .menu2__container__select
+          = f.input :article_public, as: :boolean, label: false, class: "public"
+      .menu2__submit
+        = f.button :submit, value: "問題作成", class: "menu2__submit__btn"

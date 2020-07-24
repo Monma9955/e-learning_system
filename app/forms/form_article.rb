@@ -8,8 +8,8 @@ class FormArticle
   attribute :article_format, :integer
   attribute :article_title, :string
   attribute :page_text, :string
-  attribute :option_correct, :boolean
-  attribute :option_wrong, :boolean
+  attribute :option_correct, :string
+  attribute :option_wrong, :string
   attribute :article_price, :integer
   attribute :article_time_limit, :integer
   attribute :article_public, :boolean
@@ -38,9 +38,9 @@ class FormArticle
     page = article.pages.build(text: page_text)
     page.save
 
-    option = page.options.build(name: option_correct, correct: true)
+    option = page.options.build(answer: option_correct, correct: true)
     option.save
 
-    page.options.create(name: option_wrong, correct: false)
+    page.options.create(answer: option_wrong, correct: false)
   end
 end

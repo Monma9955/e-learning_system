@@ -3,6 +3,7 @@ class FormArticle
   include ActiveModel::Attributes
   include ActiveModel::Validations
 
+  attribute :article_created_user, :integer
   attribute :article_category, :string
   attribute :article_format, :integer
   attribute :article_title, :string

@@ -23,4 +23,23 @@ class FormArticle
   validates :article_time_limit, presence: true
   validates :article_public, presence: true
 
+  def save
+    return false unless valid?
+    article = Article.new(user_id: article_created_user,
+                          category_id: article_category,
+                          title: article_title,
+                          price: article_price,
+                          format: article_format,
+                          time_limit: article_time_limit,
+                          public: article_public)
+    article.save
+
+    page = article.pages.build(text: page_text)
+    page.save
+
+    option = page.options.build(name: option_correct, correct: true)
+    option.save
+
+    page.options.create(name: option_wrong, correct: false)
+  end
 end

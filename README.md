@@ -117,7 +117,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |page_id|bigint|null: false, foreign_key: true|
-|name|string|null: false|
+|answer|string|null: false|
 |correct|boolean|default: true, null: false|
 
 ### Association

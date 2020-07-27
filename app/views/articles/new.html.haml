@@ -3,6 +3,7 @@
     = link_to root_path do
       = image_tag "/assets/png/eLS_logo.png", alt: "title_logo"
   = simple_form_for @article, url: {controller: 'articles', action: 'create'}, local: true do |f|
+    = render 'layouts/error_messages', model: f.object
     .menu1
       .menu1__container
         %p.menu1__container__name

@@ -1,7 +1,8 @@
 class ArticlesController < ApplicationController
+  before_action :set_root_categories, only: [:new, :create]
+
   def new
     @article = FormArticle.new
-    @root_categories = Category.root
   end
 
   def create
@@ -12,6 +13,10 @@ class ArticlesController < ApplicationController
       flash.now[:alert] = "問題の作成に失敗しました"
       render :new
     end
+  end
+
+  def set_root_categories
+    @root_categories = Category.root
   end
 
   private

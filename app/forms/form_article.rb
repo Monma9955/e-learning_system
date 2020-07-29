@@ -20,9 +20,8 @@ class FormArticle
   validates :page_text, presence: true
   validates :option_correct, presence: true
   validates :option_wrong, presence: true
-  validates :article_price, presence: true
-  validates :article_time_limit, presence: true
-  validates :article_public, presence: true
+  validates :article_price, inclusion: 100..999_999, allow_nil: true
+  validates :article_time_limit, inclusion: 0..120, allow_nil: true
 
   def save
     return false unless valid?

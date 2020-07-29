@@ -48,6 +48,6 @@
       .menu2__container
         .menu2__container__name 公開する
         .menu2__container__select
-          = f.input :article_public, as: :boolean, label: false, class: "public"
+          = f.input :article_public, as: :boolean, label: false, input_html: { class: "public" }
       .menu2__submit
         = f.button :submit, value: "問題作成", class: "menu2__submit__btn"

@@ -84,10 +84,12 @@ $article-padding: 20px 40px;
       text-align: right;
       @include form_input($mWidth:200px);
     }
-    .public {
-      padding-left: 12px;
-      @include form_input($mWidth:100px);
-      cursor: pointer;
+    &__container__select {
+      text-align: center;
+      .public {
+        @include form_input($mHeight:25px, $mWidth:25px);
+        cursor: pointer;
+      }
     }
     &__submit {
       &__btn {

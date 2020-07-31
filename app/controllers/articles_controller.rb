@@ -24,12 +24,12 @@ class ArticlesController < ApplicationController
     params.require(:form_article).permit(:article_category,
                                     :article_title,
                                     :article_price,
-                                    :article_format,
                                     :article_time_limit,
                                     :article_public,
                                     :page_text,
                                     :option_correct,
                                     :option_wrong
-                                    ).merge(article_created_user: current_user.id)
+                                    ).merge(created_user_id: current_user.id,
+                                            article_format: 0)
   end
 end

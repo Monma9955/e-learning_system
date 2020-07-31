@@ -3,7 +3,7 @@ class FormArticle
   include ActiveModel::Attributes
   include ActiveModel::Validations
 
-  attribute :article_created_user, :integer
+  attribute :created_user_id, :integer
   attribute :article_category, :string
   attribute :article_format, :integer
   attribute :article_title, :string
@@ -25,7 +25,7 @@ class FormArticle
 
   def save
     return false unless valid?
-    article = Article.new(user_id: article_created_user,
+    article = Article.new(user_id: created_user_id,
                           category_id: article_category,
                           title: article_title,
                           price: article_price,

@@ -21,9 +21,12 @@ bisiness_others = bisiness.children.create(name: "その他のビジネススキ
 bisiness_excel.children.create([{name: "ピボットテーブル"}, {name: "マクロ・VBA"}])
 bisiness_speech.children.create([{name: "自己紹介"}])
 bisiness_communication.children.create([{name: "ファシリテーション"}])
-bisiness_writing.children.create([{name: "コピーライティング"}, {name: "ひざ丈スカート"}, {name: "ロングスカート"}, {name: "キュロット"}, {name: "その他"}])
+bisiness_writing.children.create([{name: "コピーライティング"},
+                                  {name: "ひざ丈スカート"}, {name: "ロングスカート"},
+                                  {name: "キュロット"}, {name: "その他"}])
 bisiness_finance.children.create([{name: "会計"}, {name: "ファイナンス"}])
-bisiness_management_strategy.children.create([{name: "経営戦略"}, {name: "経営分析"}])
+bisiness_management_strategy.children.create([{name: "経営戦略"},
+                                              {name: "経営分析"}])
 bisiness_others.children.create([{name: "その他"}])
 
 # Web・IT・デザインの子カテゴリ
@@ -41,19 +44,30 @@ tech_fashion_design = tech.children.create(name: "ファッションデザイン
 tech_cad = tech.children.create(name: "CAD・建築デザイン")
 tech_others = tech.children.create(name: "その他のWeb・IT・デザインスキル")
 # Web・IT・デザインの孫カテゴリ
-tech_programing.children.create([{name: "Ｃ・Ｃ++・Ｃ#"}, {name: "Git・Github"}, {name: "Javascript・jQuery"}, {name: "PHP"}, {name: "Python"}, {name: "Ｒ"}, {name: "Ruby on Rails"}])
-tech_appdevelop.children.create([{name: "Android・Java・Kotlin"}, {name: "iOS・Swift"}])
+tech_programing.children.create([{name: "Ｃ・Ｃ++・Ｃ#"}, {name: "Git・Github"},
+                                 {name: "Javascript・jQuery"}, {name: "PHP"},
+                                 {name: "Python"}, {name: "Ｒ"},
+                                 {name: "Ruby on Rails"}])
+tech_appdevelop.children.create([{name: "Android・Java・Kotlin"},
+                                 {name: "iOS・Swift"}])
 tech_webdirection.children.create([{name: "Webディレクション"}])
-tech_htmlcss.children.create([{name: "CSS3"}, {name: "HTML5"}, {name: "SASS・SCSS"}])
+tech_htmlcss.children.create([{name: "CSS3"}, {name: "HTML5"},
+                              {name: "SASS・SCSS"}])
 tech_wordpress.children.create([{name: "WordPress・HP作成"}])
-tech_webanalytics.children.create([{name: "Google Analytics"}, {name: "Tag Manager"}])
+tech_webanalytics.children.create([{name: "Google Analytics"},
+                                   {name: "Tag Manager"}])
 tech_seo.children.create([{name: "SEO"}, {name: "リスティング広告"}])
 tech_web_design.children.create([{name: "Webデザイン"}])
 tech_graphic_design.children.create([{name: "グラフィックデザイン"}])
 tech_cg_design.children.create([{name: "CGデザイン"}])
 tech_fashion_design.children.create([{name: "ファッションデザイン"}])
 tech_cad.children.create([{name: "CAD・建築デザイン"}])
-tech_others.children.create([{name: "SNSマーケティング"}, {name: "Facebook"}, {name: "LINE"}, {name: "Twitter"}, {name: "youtube"}, {name: "インスタグラム"}, {name: "パソコンの使い方"}, {name: "Access"}, {name: "AWS"}, {name: "MySQL"}, {name: "InDesign"}, {name: "タイピング"}, {name: "Zoom"}])
+tech_others.children.create([{name: "SNSマーケティング"}, {name: "Facebook"},
+                             {name: "LINE"}, {name: "Twitter"},
+                             {name: "youtube"}, {name: "インスタグラム"},
+                             {name: "パソコンの使い方"}, {name: "Access"},
+                             {name: "AWS"}, {name: "MySQL"}, {name: "InDesign"},
+                             {name: "タイピング"}, {name: "Zoom"}])
 
 # 写真・映像の子カテゴリ
 photo_video_1 = photo_video.children.create(name: "写真（カメラ）基礎")
@@ -112,8 +126,11 @@ cooking_9 = cooking.children.create(name: "コーヒー")
 cooking_10 = cooking.children.create(name: "グルメ・食文化")
 cooking_11 = cooking.children.create(name: "その他料理・グルメ講座")
 # 料理・グルメの孫カテゴリ
-cooking_1.children.create([{name: "タイ・エスニック"}, {name: "作り置き・時短"}, {name: "寿司"}, {name: "中華"}, {name: "洋食"}, {name: "和食"}])
-cooking_2.children.create([{name: "アイシングクッキー"}, {name: "ケーキ・クッキー"}, {name: "和菓子"}])
+cooking_1.children.create([{name: "タイ・エスニック"}, {name: "作り置き・時短"},
+                           {name: "寿司"}, {name: "中華"}, {name: "洋食"},
+                           {name: "和食"}])
+cooking_2.children.create([{name: "アイシングクッキー"}, {name: "ケーキ・クッキー"},
+                           {name: "和菓子"}])
 cooking_3.children.create([{name: "パン作り"}])
 cooking_4.children.create([{name: "包丁の研ぎ方"}])
 cooking_5.children.create([{name: "ワイン"}])
@@ -122,7 +139,8 @@ cooking_7.children.create([{name: "カクテル・ウィスキー"}])
 cooking_8.children.create([{name: "紅茶"}])
 cooking_9.children.create([{name: "ラテアート"}])
 cooking_10.children.create([{name: "グルメ・食文化"}])
-cooking_11.children.create([{name: "スパイス・ハーブ"}, {name: "魚のさばき方"}, {name: "ビール"}])
+cooking_11.children.create([{name: "スパイス・ハーブ"}, {name: "魚のさばき方"},
+                            {name: "ビール"}])
 
 # ビューティー・ヘルスの子カテゴリ
 health_1 = health.children.create(name: "スキンケア")

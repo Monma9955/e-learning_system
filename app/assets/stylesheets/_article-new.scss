@@ -1,5 +1,3 @@
-$article-padding: 20px 40px;
-
 .new-article {
   // レスポンシブ未対応
   width: 970px;
@@ -8,31 +6,37 @@ $article-padding: 20px 40px;
   font-size: 18px;
   header {
     background-color: $background-theme-color;
-    padding: $article-padding;
+    padding: 20px 40px;
     img {
       @include main-logo;
     }
   }
-  .menu1 {
-    padding: $article-padding;
-    display: flex;
-    justify-content: space-between;
-    &__container {
-      width: 300px;
-      &__select {
-        width: 98%;
-        height: 30px;
-      }
-    }
-  }
-  .article-title {
+  .question_format {
     padding: 20px 80px 20px 0;
     @include flex-end-form;
     border-bottom: solid 2px #000080;
-    input {
+    &__select {
       margin-left: 20px;
-      padding: 5px 15px;
-      @include form_input($mWidth:680px);
+      @include form_input($mWidth: 200px);
+    }
+  }
+  .article1 {
+    padding: 20px 80px 20px 0;
+    border-bottom: solid 2px #000080;
+    &__categories {
+      @include flex-end-form;
+      &__category-select {
+        margin-left: 20px;
+        @include form_input($mWidth: 714px);
+      }
+    }
+    &__title {
+      margin-top: 15px;
+      @include flex-end-form;
+      &__input {
+        margin-left: 20px;
+        @include form_input($mWidth: 680px);
+      }
     }
   }
   .pages {
@@ -46,7 +50,7 @@ $article-padding: 20px 40px;
           &__area {
               margin-left: 20px;
               padding: 10px 15px;
-              @include form_input($mHeight:100px, $mWidth:680px);
+              @include form_input($mHeight: 100px, $mWidth: 680px);
           }
         }
         &__add-form {
@@ -74,15 +78,14 @@ $article-padding: 20px 40px;
       }
     }
   }
-  .menu2 {
-    padding: $article-padding;
+  .article2 {
+    padding: 20px 40px;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     .form {
-      padding-right: 5px;
       text-align: right;
-      @include form_input($mWidth:200px);
+      @include form_input($mWidth:200px, $padding:0 10px 0 0);
     }
     &__container__select {
       text-align: center;

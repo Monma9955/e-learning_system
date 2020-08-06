@@ -19,6 +19,17 @@ class ArticlesController < ApplicationController
     @root_categories = Category.root
   end
 
+  # 以下json formatのアクション
+  def get_category_parents
+    # 選択されたルートカテゴリに紐付く親カテゴリの配列を取得
+    @category_parents = Category.find_by(id: "#{params[:root_id]}",ancestry: nil).children
+  end
+
+  def get_category_children
+    # 選択された親カテゴリに紐付く子カテゴリの配列を取得
+    @category_children = Category.find("#{params[:parent_id]}").children
+  end
+
   private
   def article_params
     params.require(:form_article).permit(:article_category,

@@ -11,7 +11,8 @@
     .article1
       .article1__categories
         %p.article1__categories__category-name カテゴリー
-        = f.collection_select :article_category, @root_categories, :id, :name, { include_blank: false }, class: "article1__categories__category-select"
+        = f.collection_select :article_category, @root_categories, :id, :name, { prompt: "選択してください" }, id: "article_category", class: "article1__categories__category-select"
+      .article1__categories-append
       .article1__title
         %label.article1__title__name タイトル
         = f.input_field :article_title, label: false, error: false, placeholder: "タイトルを入力してください", class: "article1__title__input"
@@ -49,4 +50,4 @@
         .article2__container__select
           = f.input :article_public, as: :boolean, label: false, input_html: { class: "public" }
       .article2__submit
-        = f.button :submit, value: "問題作成", class: "menu2__submit__btn"
+        = f.button :submit, value: "問題作成", class: "article2__submit__btn"

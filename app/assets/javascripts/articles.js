@@ -2,7 +2,7 @@ $(document).on('turbolinks:load', function(){
   $(function(){
     // カテゴリセレクトボックスのオプションを作成
     function appendOption(category){
-      var html = `<option value="${category.id}">${category.name}</option>`;
+      var html = `<option value="${category.id}" required>${category.name}</option>`;
       return html;
     }
     // 親カテゴリの表示作成

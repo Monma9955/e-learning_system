@@ -25,8 +25,9 @@
     border-bottom: solid 2px #000080;
     &__categories {
       @include flex-end-form;
+      flex-wrap: wrap;
       &__category-select {
-        margin-left: 20px;
+        margin: 0 0 5px 20px;
         @include form_input($mWidth: 714px);
       }
     }

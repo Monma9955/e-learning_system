@@ -1,0 +1,21 @@
+.notification {
+  .notice {
+    background-color: lightblue;
+    color: white;
+    text-align: center;
+  }
+
+  .alert {
+    background-color: orange;
+    color: white;
+    text-align: center;
+  }
+}
+
+#error_explanation {
+  color:#262626; 
+  background:#FFEBE8;
+  text-align: center;
+  border:2px solid #990000;
+  padding:12px; font-weight:850;
+}

@@ -18,6 +18,7 @@ RSpec.describe FormArticle, type: :model do
       context 'article_formatカラム' do
         it "enumに存在する出題形式では投稿できること" do
           article = build(:form_article, article_format: 1)
+          expect(article).to be_valid
         end
       end
 

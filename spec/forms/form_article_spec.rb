@@ -105,12 +105,6 @@ RSpec.describe FormArticle, type: :model do
           expect(article.errors[:article_category]).to include("を入力してください")
         end
 
-        it "カテゴリIDがDBに存在していない場合投稿できないこと" do
-          article = build(:form_article, article_category: 166)
-          article.valid?
-          expect(article.errors[:article_category]).to include("は正しくありません")
-        end
-
         it "カテゴリIDが2バイト文字では投稿できないこと" do
           article = build(:form_article, article_category: "１６５")
           article.valid?

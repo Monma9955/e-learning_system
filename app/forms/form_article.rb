@@ -15,7 +15,7 @@ class FormArticle
   attribute :article_public, :boolean
 
   validates :created_user_id, presence: true, numericality: { only_integer: true }
-  validates :article_category, presence: true, inclusion: 1..165
+  validates :article_category, presence: true, numericality: { only_integer: true }
   validates :article_format, presence: true, inclusion: 0..1
   validates :article_title, presence: true, length: { maximum: 30 }
   validates :page_text, presence: true, length: { maximum: 1000 }

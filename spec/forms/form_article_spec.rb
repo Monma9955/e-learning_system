@@ -106,9 +106,9 @@ RSpec.describe FormArticle, type: :model do
         end
 
         it "カテゴリIDが2バイト文字では投稿できないこと" do
-          article = build(:form_article, article_category: "１６５")
+          article = build(:form_article, article_category: "１")
           article.valid?
-          expect(article.errors[:article_category]).to include("は正しくありません")
+          expect(article.errors[:article_category]).to include()
         end
       end
 

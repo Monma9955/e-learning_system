@@ -14,15 +14,13 @@
 ### Association
 
 - has_one :user_name, dependent: :destroy
-- has_many :articles, dependent: :nullify
-
 - has_many :administrators, dependent: :destroy
-- has_many :articles, through: :administrators
+- has_many :contents, through: :administrators
 
 - has_many :transactions, dependent: :destroy
-- has_many :articles, through: :transactions
+- has_many :contents, through: :transactions
 - has_one :recommend_transaction, -> {where(recommend: true)}, class_name: 'Transaction'
-- has_one :recommend_article, through: :recommend_transaction, source: :article
+- has_one :recommend_content, through: :recommend_transaction, source: :content
 
 - has_many :groups, dependent: :destroy
 
@@ -33,8 +31,6 @@
 - has_many :followings, through: :relationships, source: :followed
 - has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'followed_id'
 - has_many :followers, through: :reverse_of_relationships, source: :follower
-
-- has_many :results, dependent: :destroy
 
 ## User_namesテーブル
 
@@ -61,8 +57,8 @@
 - belongs_to :user
 - has_many :users_groups, dependent: :destroy
 - has_many :groups, through: :users_groups
-- has_many :groups_articles, dependent: :destroy
-- has_many :articles, through: groups_articles
+- has_many :groups_contents, dependent: :destroy
+- has_many :contents, through: groups_contents
 
 ## Categoriesテーブル
 
@@ -80,35 +76,28 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|bigint|foreign_key: true|
-|category_id|bigint|foreign_key: true|
-|title|string|null: false|
+|category|references|null: false, foreign_key: true|
+|title|string|null: false, index: true|
 |price|integer||
-|format|integer|default: 0, null: false, limit:1|
-|time_limit|integer||
-|public|boolean|default: false, null: false|
 
 ### Association
 
-- belongs_to :user
 - belongs_to :category
-- has_many :pages, dependent: :destroy
-- has_many :administrators, dependent: :destroy
-- has_many :users, through: :administrators
-- has_many :transactions, dependent: :destroy
-- has_many :users, through: :transactions
+- has_many :contents, dependent: :destroy
 
-## Pagesテーブル
+## Contentsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|article_id|bigint|null: false, foreign_key: true|
-|text|text|null: false|
+|article|references|null: false, foreign_key: true|
+|title|string|null: false, index: true|
+|price|integer|index: true|
+|draft|boolean|default: false, null: false|
 
 ### Association
 
 - belongs_to :article
-- has_many :options, dependent: :delete_all
+- has_many :texts, dependent: :delete_all
 - has_many :images, dependent: :delete_all
 - has_many :results, dependent: :destroy
 
@@ -125,31 +114,25 @@
 - belongs_to :page
 - has_many :results, dependent: :nullify
 
-## Imagesテーブル
+## textsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|page|references|null: false, foreign_key: true|
-|image|string|null: false|
+|text|text||
 
 ### Association
 
-- belongs_to :page
+- belongs_to :content
 
-## Resultsテーブル
+## imagesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user|references|null: false, foreign_key: true|
-|page|references|null: false, foreign_key: true|
-|option|references|foreign_key: true|
-|score|decimal|precision: 1, scale: 2|
+|image|string||
 
 ### Association
 
-- belongs_to :user
-- belongs_to :page
-- belongs_to :option
+- belongs_to :content
 
 以下中間テーブル
 
@@ -177,38 +160,38 @@
 - belongs_to :user
 - belogns_to :group
 
-## groups_articlesテーブル
+## groups_contentsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |group_id|references|null: false, foreign_key: true|
-|article_id|references|null: false, foreign_key: true|
+|content_id|references|null: false, foreign_key: true|
 
 ### Association
 
 - belongs_to :user
-- belongs_to :group
+- belogns_to :group
 
 ## administratorsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
-|article|references|null: false, foreign_key: true|
+|content|references|null: false, foreign_key: true|
 
 ### Association
 
 - belongs_to :user
-- belongs_to :article
+- belongs_to :content
 
 ## transactionsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
-|article|references|null: false, foreign_key: true|
+|content|references|null: false, foreign_key: true|
 
 ### Association
 
 - belongs_to :user
-- belongs_to :article
+- belongs_to :content

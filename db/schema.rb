@@ -68,8 +68,4 @@ ActiveRecord::Schema.define(version: 2020_07_24_105720) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "articles", "categories"
-  add_foreign_key "articles", "users"
-  add_foreign_key "options", "pages"
-  add_foreign_key "pages", "articles"
 end

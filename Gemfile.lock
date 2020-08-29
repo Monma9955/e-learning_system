@@ -289,7 +289,6 @@ PLATFORMS
 DEPENDENCIES
   actionpack (>= 5.2.4.3)
   activesupport (>= 5.2.4.3)
-  ancestry
   bootsnap (>= 1.1.0)
   byebug
   capybara (>= 2.15)

@@ -61,6 +61,7 @@ end
 
 gem "actionpack", ">= 5.2.4.3"
 gem "activesupport", ">= 5.2.4.3"
+gem "ancestry"
 gem "devise"
 gem "enum_help"
 gem "factory_bot_rails"

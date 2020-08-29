@@ -1,0 +1,53 @@
+.new-article
+  %header
+    = link_to root_path do
+      = image_tag "/assets/png/eLS_logo.png", alt: "title_logo"
+  = form_with url: "#" do |f|
+    .question_format
+      %label.question_format__label 出題形式
+      = f.select :article_format, Article.formats_i18n.invert, {}, class: "question_format__select"
+  = simple_form_for @article, url: { controller: 'articles', action: 'create' }, local: true do |f|
+    = render 'layouts/error_messages', model: f.object
+    .article1
+      .article1__categories
+        %p.article1__categories__category-name カテゴリー
+        = f.collection_select :article_category, @root_categories, :id, :name, { prompt: "選択してください" }, id: "articleCategory", class: "article1__categories__category-select"
+      #categoriesAppend.article1__categories
+      .article1__title
+        %label.article1__title__name タイトル
+        = f.input_field :article_title, label: false, error: false, placeholder: "タイトルを入力してください", class: "article1__title__input"
+    #pages.pages
+      .pages__page
+        .pages__page__container
+          %label.pages__page__container__name 問題文
+          .pages__page__container__text
+            = f.text_area :page_text, class: "pages__page__container__text__area", placeholder: "問題文を入力してください。", required: true
+        #correct.pages__page__container
+          %label.pages__page__container__name-block 正答
+          .pages__page__container__add-form
+            = icon('fas', 'plus')
+          .pages__page__container__answer
+            = f.input_field :option_correct, label: false, placeholder: "正解の選択肢を入力してください", class: "form"
+        #wrong.pages__page__container
+          %label.pages__page__container__name-block 誤答
+          .pages__page__container__add-form
+            = icon('fas', 'plus')
+          .pages__page__container__answer
+            = f.input_field :option_wrong, label: false, placeholder: "不正解の選択肢を入力してください", class: "form"
+    .article2
+      .article2__container
+        %label.article2__container__name 料金（未入力の場合は無料）
+        .article2__container__input
+          = f.input_field :article_price, label: false, class: "form", placeholder: "100〜999,000"
+          円
+      .article2__container
+        %label.article2__container__name 制限時間（未入力の場合は無制限）
+        .article2__container__input
+          = f.input_field :article_time_limit, class: "form", placeholder: "0〜120"
+          分
+      .article2__container
+        %label.article2__container__name 公開する
+        .article2__container__select
+          = f.input :article_public, as: :boolean, label: false, input_html: { class: "public" }
+      .article2__submit
+        = f.button :submit, value: "問題作成", class: "article2__submit__btn"

@@ -1,7 +1,22 @@
-@mixin form-input($mWidth: 250px, $bRadius: 3px) {
-  min-height: 40px;
+@mixin form-input($mHeight: 40px, $mWidth: 250px, $padding:5px 15px, $bRadius: 3px) {
+  min-height: $mHeight;
   min-width: $mWidth;
+  padding: $padding;
   border: $form-border {
     radius: $bRadius;
   }
+}
+
+@mixin main-logo() {
+  width: 120px;
+  height: 45px;
+  border-radius: 2px;
+  object-fit: cover;
+  object-position: 0% 50%;
+}
+
+@mixin flex-end-form() {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }

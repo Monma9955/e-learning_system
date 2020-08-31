@@ -1,3 +1,4 @@
-Dir[File.expand_path('./db/seeds' << '/*.rb')].each do |file|
-  require file
+if User.count == 0
+  require './db/seeds/user.rb'
+  require './db/seeds/category.rb'
 end

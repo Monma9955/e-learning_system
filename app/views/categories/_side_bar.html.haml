@@ -1,0 +1,15 @@
+- if user_signed_in?
+  %nav#side
+    %ul.menu
+      %li.name
+        = current_user.nickname
+      %li.followed
+        = link_to "フォローユーザー", '#' 
+      %li.menu__purchased
+        = link_to "購入した問題", '#'
+      %li.menu__group
+        = link_to "マイグループ", '#'
+      %li.menu__created
+        = link_to "作成した問題", '#'
+      %li.menu__sales
+        = link_to "売上", '#'

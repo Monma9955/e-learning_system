@@ -2,9 +2,8 @@
 @import 'modules/variables';
 @import 'modules/mixin';
 @import 'modules/notifications';
+@import 'modules/user';
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 @import 'reset';
-@import 'top';
-@import 'modules/user';
-@import 'article-new';
+@import 'partials/base';

@@ -20,3 +20,21 @@
   align-items: center;
   justify-content: flex-end;
 }
+
+@mixin side-bar($width: 150px, $tAlign: center) {
+  float: left;
+  width: $width;
+  border-right: solid 2px;
+  padding: 15px 15px 0;
+  text-align: $tAlign;
+  ul {
+    min-height: calc(100vh - 15px - #{$header-height} );
+    li {
+      padding-bottom: 18px;
+      a {
+        text-decoration: none;
+        color: #187fd4;
+      }
+    }
+  }
+}

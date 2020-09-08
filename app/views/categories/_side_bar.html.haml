@@ -3,4 +3,5 @@
   %ul
     - root_categories.each do |category|
       %li
-        = category.name
+        = link_to '#' do
+          = category.name

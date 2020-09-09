@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
   end
 
   def set_root_categories
-    @root_categories = Category.root
+    @root_categories = Category.roots
   end
 
   # 以下json formatのアクション

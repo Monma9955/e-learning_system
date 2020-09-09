@@ -1,0 +1,56 @@
+#container
+  = render 'shared/header'
+  #main
+    = render 'side_bar', root_categories: @root_categories
+    .category
+      .category__list
+        = Category.find(params[:id]).name
+      .category__inner
+        - @current_category_children.each do |parent_category|
+          .category__inner__name
+            = parent_category.name
+      .articles
+        Excelのカテゴリー の問題
+        .inner
+          %ul.article
+            = icon('fas', 'plus-square')
+            タイトル
+            %li.content
+              問題
+            %li.content
+              問題
+          %ul.article
+            = icon('fas', 'plus-square')
+            タイトル
+            %li.content
+              問題
+            %li.content
+              問題
+          %ul.article
+            = icon('fas', 'plus-square')
+            タイトル
+            %li.content
+              問題
+            %li.content
+              問題
+          %ul.article
+            = icon('fas', 'plus-square')
+            タイトル
+            %li.content
+              問題
+            %li.content
+              問題
+          %ul.article
+            = icon('fas', 'plus-square')
+            タイトル
+            %li.content
+              問題
+            %li.content
+              問題
+          %ul.article
+            = icon('fas', 'plus-square')
+            タイトル
+            %li.content
+              問題
+            %li.content
+              問題

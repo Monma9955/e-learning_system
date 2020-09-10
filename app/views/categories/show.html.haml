@@ -4,7 +4,7 @@
     = render 'side_bar', root_categories: @root_categories
     .category
       .category__list
-        = Category.find(params[:id]).name
+        = @current_category.name
       .category__inner
         - @current_category_children.each do |parent_category|
           .category__inner__name

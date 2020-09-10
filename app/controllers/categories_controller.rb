@@ -2,7 +2,8 @@ class CategoriesController < ApplicationController
   before_action :set_root_categories, only: [:index, :show]
 
   def show
-    @current_category_children = Category.find(params[:id]).children
+    @current_category = Category.find(params[:id])
+    @current_category_children = @current_category.children
   end
 
   def set_root_categories

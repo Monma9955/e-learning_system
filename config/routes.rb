@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root to: 'categories#index'
 
-  resources :categories, only: [:index, :show]
+  resources :categories, only: [:show]
   resources :articles, only: [:new, :create] do
     collection do
       get 'get_category_parents', defaults: { format: 'json' }

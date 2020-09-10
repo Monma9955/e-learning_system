@@ -2,16 +2,19 @@
   = render 'shared/header'
   #main
     = render 'side_bar', root_categories: @root_categories
-    .category
-      .category__list
+    .category-contents
+      .root-name
         = @current_category.name
-      .category__inner
+      .parents
         - @current_category_children.each do |parent_category|
-          .category__inner__name
+          .parents__parent-name
             = parent_category.name
-      .articles
-        Excelのカテゴリー の問題
-        .inner
+      #articlesAppend
+        .selected-parent
+          Excelのカテゴリー の問題
+        .child-name
+          ピボットテーブル
+        .articles
           %ul.article
             = icon('fas', 'plus-square')
             タイトル

@@ -2,7 +2,10 @@
   flex-basis: 740px;
   padding: 25px 0 0 30px;
   .root-name {
-    font-size: 24px;
+    font: {
+      size: 29px;
+      weight: bold;
+    }
   }
   .parents {
     padding: 10px 0 0 15px;
@@ -12,6 +15,7 @@
       display: inline-block;
       width: 235px;
       padding: 3px 0;
+      font-size: 18px;
       i {
         text-align: center;
         width: 25px;
@@ -20,29 +24,30 @@
     }
   }
   .selected-parent {
-    font-weight: bold;
     padding-top: 20px;
+    color: #717574;
+    font: {
+      size: 19px;
+      weight: bold;
+    }
   }
   .child-name {
     margin-top: 5px;
     padding-left: 10px;
+    border-radius: 4px;
     background-color: #33dfb9;
+    i {
+      color: $white-color;
+    }
   }
   .articles {
-    margin: 5px 0 0 15px;
+    padding: 5px 15px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    ul {
-      padding-bottom: 10px;
-      i {
-        color: #02c39a;
-      }
-      li {
-        width: 350px;
-        font-weight: normal;
-        font-size: 14px;
-      }
+    .article {
+      flex-basis: 49%;
+      margin-bottom: 5px;
     }
   }
 }

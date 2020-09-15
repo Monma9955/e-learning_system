@@ -16,13 +16,14 @@
       width: 235px;
       padding: 3px 0;
       font-size: 18px;
-      i {
-        text-align: center;
-        width: 25px;
-        color: $menu-theme-color;
+      a {
+        text-decoration: none;
+        color: $link-text;
       }
     }
   }
+
+  // 以下show_articlesに適用しているSCSS
   .selected-parent {
     padding-top: 20px;
     color: #717574;

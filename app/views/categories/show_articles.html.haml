@@ -1,0 +1,83 @@
+#container
+  = render 'shared/header'
+  #main
+    = render 'side_bar', root_categories: @root_categories
+    .category-contents
+      .root-name
+        = @current_root_category.name
+      .parents
+        - @current_root_category_children.each do |parent_category|
+          .parents__parent-name
+            = link_to "#{parent_category.id}" do
+              = parent_category.name
+      .selected-parent
+        Excelのカテゴリー の問題
+      .category-articles
+        .child-name
+          = icon('fas', 'plus-square')
+          ピボットテーブル
+        .articles
+          .article
+            タイトル
+          .article
+            タイトル
+          .article
+            タイトル
+          .article
+            タイトル
+          .article
+            タイトル
+          .article
+            タイトル
+          .article
+            タイトル
+          .article
+            タイトル
+          .article
+            タイトル
+      .category-articles
+        .child-name
+          = icon('fas', 'plus-square')
+          マクロ・VBA
+        .articles
+          .article
+            タイトル
+          .article
+            タイトル
+          .article
+            タイトル
+          .article
+            タイトル
+          .article
+            タイトル
+          .article
+            タイトル
+          .article
+            タイトル
+          .article
+            タイトル
+          .article
+            タイトル
+      .category-articles
+        .child-name
+          = icon('fas', 'plus-square')
+          自己紹介
+        .articles
+          .article
+            タイトル
+          .article
+            タイトル
+          .article
+            タイトル
+          .article
+            タイトル
+          .article
+            タイトル
+          .article
+            タイトル
+          .article
+            タイトル
+          .article
+            タイトル
+          .article
+            タイトル

@@ -10,6 +10,7 @@ class CategoriesController < ApplicationController
     @current_root_category = Category.find(params[:category_id])
     @current_root_category_children = @current_root_category.children
     @current_parent_category = Category.find(params[:id])
+    @current_parent_category_children = @current_parent_category.children
   end
 
   def set_root_categories

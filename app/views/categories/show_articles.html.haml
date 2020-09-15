@@ -11,73 +11,11 @@
             = link_to "#{parent_category.id}" do
               = parent_category.name
       .selected-parent
-        Excelのカテゴリー の問題
-      .category-articles
-        .child-name
-          = icon('fas', 'plus-square')
-          ピボットテーブル
-        .articles
-          .article
-            タイトル
-          .article
-            タイトル
-          .article
-            タイトル
-          .article
-            タイトル
-          .article
-            タイトル
-          .article
-            タイトル
-          .article
-            タイトル
-          .article
-            タイトル
-          .article
-            タイトル
-      .category-articles
-        .child-name
-          = icon('fas', 'plus-square')
-          マクロ・VBA
-        .articles
-          .article
-            タイトル
-          .article
-            タイトル
-          .article
-            タイトル
-          .article
-            タイトル
-          .article
-            タイトル
-          .article
-            タイトル
-          .article
-            タイトル
-          .article
-            タイトル
-          .article
-            タイトル
-      .category-articles
-        .child-name
-          = icon('fas', 'plus-square')
-          自己紹介
-        .articles
-          .article
-            タイトル
-          .article
-            タイトル
-          .article
-            タイトル
-          .article
-            タイトル
-          .article
-            タイトル
-          .article
-            タイトル
-          .article
-            タイトル
-          .article
-            タイトル
-          .article
-            タイトル
+        = "#{@current_parent_category.name} の問題"
+      - @current_parent_category_children.each do |child_category|
+        .category-articles
+          .child-name
+            = icon('fas', 'plus-square')
+            = child_category.name
+          .articles
+            = render partial: "articles", collection: child_category.articles, as: :article

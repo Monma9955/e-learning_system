@@ -4,6 +4,7 @@ class CategoriesController < ApplicationController
   def show
     @current_category = Category.find(params[:id])
     @current_category_children = @current_category.children
+    @preview_children_categories = @current_category_children.first.children
   end
 
   def show_articles

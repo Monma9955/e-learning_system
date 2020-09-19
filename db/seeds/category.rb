@@ -40,7 +40,7 @@ tech_graphic_design = tech.children.create(name: "グラフィックデザイン
 tech_cg_design = tech.children.create(name: "CGデザイン")
 tech_fashion_design = tech.children.create(name: "ファッションデザイン")
 tech_cad = tech.children.create(name: "CAD・建築デザイン")
-tech_others = tech.children.create(name: "その他のWeb・IT・デザインスキル")
+tech_others = tech.children.create(name: "その他Web・IT・デザイン")
 # Web・IT・デザインの孫カテゴリ
 tech_programing.children.create([{name: "Ｃ・Ｃ++・Ｃ#"}, {name: "Git・Github"},
                                  {name: "Javascript・jQuery"}, {name: "PHP"},

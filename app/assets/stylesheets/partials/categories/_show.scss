@@ -1,0 +1,59 @@
+.category-contents {
+  flex-basis: 740px;
+  padding: 25px 0 0 30px;
+  .root-name {
+    font: {
+      size: 29px;
+      weight: bold;
+    }
+  }
+  .parents {
+    padding: 10px 0 0 15px;
+    display: block;
+    justify-content: space-between;
+    &__parent-name {
+      display: inline-block;
+      width: 235px;
+      padding: 3px 0;
+      font-size: 18px;
+      a {
+        text-decoration: none;
+        color: $link-text;
+      }
+    }
+  }
+
+  // 以下show_articlesに適用しているSCSS
+  .selected-parent {
+    padding-top: 20px;
+    color: #717574;
+    font: {
+      size: 19px;
+      weight: bold;
+    }
+  }
+  .child-name {
+    margin-top: 5px;
+    padding-left: 10px;
+    border-radius: 4px;
+    background-color: #33dfb9;
+    cursor: pointer;
+    i {
+      color: $white-color;
+    }
+  }
+  .articles {
+    padding: 5px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .article {
+      flex-basis: 49%;
+      margin-bottom: 5px;
+      a {
+        text-decoration: none;
+        color: $link-text;
+      }
+    }
+  }
+}

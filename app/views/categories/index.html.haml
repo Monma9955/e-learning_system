@@ -1,0 +1,16 @@
+#container
+  = render 'shared/header'
+  #main
+    = render 'side_bar', root_categories: @root_categories
+    .contents
+      .title 新着の問題
+      .new_articles
+        - @new_articles.each do |article|
+          .new_articles__article
+            -# 問題購入機能実装後にパス変更
+            = link_to "#", class: "new_articles__article__title" do
+              = article.title
+            .new_articles__article__category
+              = "#{article.category.root.name} / #{article.category.parent.name} / #{article.category.name}"
+            .new_articles__article__created_at
+              = "#{time_ago_in_words(article.created_at)}前"

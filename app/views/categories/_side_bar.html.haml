@@ -1,0 +1,7 @@
+%nav#categories-side
+  .title カテゴリー
+  %ul
+    - root_categories.each do |category|
+      %li
+        = link_to category_path(category.id) do
+          = category.name

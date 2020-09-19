@@ -1,0 +1,21 @@
+#container
+  = render 'shared/header'
+  #main
+    = render 'side_bar', root_categories: @root_categories
+    .category-contents
+      .root-name
+        = @current_category.name
+      .parents
+        - @current_category_children.each do |parent_category|
+          .parents__parent-name
+            = link_to "#{params[:id]}/#{parent_category.id}" do
+              = parent_category.name
+      .selected-parent
+        = "#{@current_category_children.first.name} の問題"
+      - @preview_children_categories.each do |child_category|
+        .category-articles
+          .child-name
+            = icon('fas', 'plus-square')
+            = child_category.name
+          .articles
+            = render partial: "articles", collection: child_category.articles, as: :article

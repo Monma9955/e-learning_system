@@ -1,0 +1,49 @@
+#container {
+  width: 100%;
+  color: $font-color;
+  #main {
+    display: flex;
+    flex-wrap: wrap;
+    .contents {
+      padding: 20px 30px;
+      .title {
+        font-size: 24px;
+      }
+      .new_articles {
+        margin: 10px 0 0 10px;
+        &__article {
+          margin-top: 5px;
+          display: flex;
+          align-items: center;
+          &__title {
+            background-color: yellow;
+            min-width: 190px;
+            max-width: 270px;
+            display: inline-block;
+            padding: 3px 12px;
+            color: $white-color;
+            text-decoration: none;
+            user-select: none;
+            background: #00b5ad;
+            border: 1px #00b5ad solid;
+            border-radius: 3px;
+            box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+            transition: 0.2s ease;
+          }
+          &__title:hover {
+            box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+          }
+          &__category {
+            margin-left: 10px;
+            padding: 3px 0;
+          }
+          &__created_at {
+            margin-left: 10px;
+            padding: 3px 0;
+          }
+        }
+      }
+    }
+  }
+}
+

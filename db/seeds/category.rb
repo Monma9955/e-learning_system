@@ -1,13 +1,13 @@
 # ルートカテゴリ
-bisiness = Category.create(name: "ビジネススキル")
-tech = Category.create(name: "Web・IT・デザイン")
+bisiness    = Category.create(name: "ビジネススキル")
+tech        = Category.create(name: "Web・IT・デザイン")
 photo_video = Category.create(name: "写真・映像")
-language = Category.create(name: "英語・語学")
-cooking = Category.create(name: "料理・グルメ")
-health = Category.create(name: "ビューティー・ヘルス")
-culture = Category.create(name: "文化・教養")
-quiz = Category.create(name: "クイズ")
-others = Category.create(name: "その他")
+language    = Category.create(name: "英語・語学")
+cooking     = Category.create(name: "料理・グルメ")
+health      = Category.create(name: "ビューティー・ヘルス")
+culture     = Category.create(name: "文化・教養")
+quiz        = Category.create(name: "クイズ")
+others      = Category.create(name: "その他")
 
 # ビジネススキルの子カテゴリ
 bisiness_excel = bisiness.children.create(name: "Excel")
@@ -21,9 +21,7 @@ bisiness_others = bisiness.children.create(name: "その他のビジネススキ
 bisiness_excel.children.create([{name: "ピボットテーブル"}, {name: "マクロ・VBA"}])
 bisiness_speech.children.create([{name: "自己紹介"}])
 bisiness_communication.children.create([{name: "ファシリテーション"}])
-bisiness_writing.children.create([{name: "コピーライティング"},
-                                  {name: "ひざ丈スカート"}, {name: "ロングスカート"},
-                                  {name: "キュロット"}, {name: "その他"}])
+bisiness_writing.children.create([{name: "コピーライティング"}])
 bisiness_finance.children.create([{name: "会計"}, {name: "ファイナンス"}])
 bisiness_management_strategy.children.create([{name: "経営戦略"},
                                               {name: "経営分析"}])
@@ -42,7 +40,7 @@ tech_graphic_design = tech.children.create(name: "グラフィックデザイン
 tech_cg_design = tech.children.create(name: "CGデザイン")
 tech_fashion_design = tech.children.create(name: "ファッションデザイン")
 tech_cad = tech.children.create(name: "CAD・建築デザイン")
-tech_others = tech.children.create(name: "その他のWeb・IT・デザインスキル")
+tech_others = tech.children.create(name: "その他Web・IT・デザイン")
 # Web・IT・デザインの孫カテゴリ
 tech_programing.children.create([{name: "Ｃ・Ｃ++・Ｃ#"}, {name: "Git・Github"},
                                  {name: "Javascript・jQuery"}, {name: "PHP"},

@@ -62,14 +62,12 @@ $(document).on('turbolinks:load', function(){
           dataType: "json"
         })
         .done(function(children) {
-          console.log(children);
           if (children.length != 0) {
             $("#childCategory").remove(); //親カテゴリが変更された時、子を削除する
             var insertHTML = "";
             children.forEach(function(child) {
               insertHTML += appendOption(child);
             });
-            console.log(insertHTML);
             appendChildrenBox(insertHTML);
           }
         })

@@ -1,6 +1,10 @@
 class CategoriesController < ApplicationController
   before_action :set_root_categories, only: [:index, :show, :show_articles]
 
+  def index
+    @new_articles = Article.new_order.limit(10)
+  end
+
   def show
     @current_category = Category.find(params[:id])
     @current_category_children = @current_category.children

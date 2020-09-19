@@ -50,6 +50,10 @@
     .article {
       flex-basis: 49%;
       margin-bottom: 5px;
+      a {
+        text-decoration: none;
+        color: $link-text;
+      }
     }
   }
 }
